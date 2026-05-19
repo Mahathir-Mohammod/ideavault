@@ -8,7 +8,6 @@
   --color-brand-red-hover:  #C9301A;  
   --color-brand-red-soft:   #F04E35;   
 
-  /* ── Neutral Palette ─────────────────────────────────────── */
   --color-black:            #0D0608;
   --color-dark-900:         #1A0C0E;
   --color-dark-800:         #2A1014;
@@ -22,14 +21,11 @@
   --color-gray-400:         #9E9090;
   --color-gray-500:         #7A6D6D;
 
-  /* ── Stripe / Texture ────────────────────────────────────── */
   --stripe-dark:            rgba(0, 0, 0, 0.35);
   --stripe-light:           rgba(255, 255, 255, 0.04);
 
-  /* ── Semantic: Card / Pink tint background ───────────────── */
   --color-card-warm:        #F2DDD8;  
   --color-card-warm-dark:   #3A1A1A; 
-  /* ── Typography ──────────────────────────────────────────── */
   --font-display:           'Syne', sans-serif;
   --font-body:              'Inter', sans-serif;
 
@@ -63,7 +59,6 @@
   --tracking-wider:   0.1em;
   --tracking-widest:  0.18em;
 
-  /* ── Spacing Scale ───────────────────────────────────────── */
   --space-1:   0.25rem;   
   --space-2:   0.5rem;    
   --space-3:   0.75rem;  
@@ -77,7 +72,6 @@
   --space-20:  5rem;     
   --space-24:  6rem;     
 
-  /* ── Border Radius ───────────────────────────────────────── */
   --radius-sm:   0.375rem;   
   --radius-md:   0.75rem;   
   --radius-lg:   1.25rem;    
@@ -85,14 +79,12 @@
   --radius-2xl:  2.5rem;    
   --radius-full: 9999px;
 
-  /* ── Shadows ─────────────────────────────────────────────── */
   --shadow-sm:   0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
   --shadow-md:   0 4px 12px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.12);
   --shadow-lg:   0 10px 30px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.15);
   --shadow-xl:   0 20px 50px rgba(0,0,0,0.35), 0 8px 20px rgba(0,0,0,0.2);
   --shadow-red:  0 8px 24px rgba(232, 57, 29, 0.4);
 
-  /* ── Transitions ─────────────────────────────────────────── */
   --ease-out:   cubic-bezier(0.0, 0.0, 0.2, 1);
   --ease-in:    cubic-bezier(0.4, 0.0, 1, 1);
   --ease-inout: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -103,7 +95,6 @@
   --duration-slow:   400ms;
   --duration-slower: 600ms;
 
-  /* ── Z-Index Scale ───────────────────────────────────────── */
   --z-below:   -1;
   --z-base:     0;
   --z-raised:  10;
@@ -113,7 +104,6 @@
   --z-modal:   50;
   --z-toast:   60;
 
-  /* ── Layout ──────────────────────────────────────────────── */
   --container-max:   1240px;
   --container-pad:   var(--space-8);
   --nav-height:      72px;
@@ -123,7 +113,6 @@
 
 :root,
 [data-theme="dark"] {
-  /* Backgrounds */
   --bg-page:          #150A0C;
   --bg-surface:       #1E0E10;
   --bg-card:          #2A1216;
@@ -141,7 +130,6 @@
                         var(--stripe-dark) 62px
                       );
 
-  /* Text */
   --text-primary:     #FFFFFF;
   --text-secondary:   rgba(255,255,255,0.65);
   --text-muted:       rgba(255,255,255,0.40);
@@ -149,14 +137,12 @@
   --text-on-red:      #FFFFFF;
   --text-inverse:     var(--color-dark-900);
 
-  /* Borders */
   --border-default:   rgba(255,255,255,0.08);
   --border-subtle:    rgba(255,255,255,0.05);
   --border-strong:    rgba(255,255,255,0.18);
   --border-accent:    var(--color-brand-red);
   --border-tag:       rgba(255,255,255,0.25);
 
-  /* Interactive */
   --color-btn-primary-bg:     var(--color-brand-red);
   --color-btn-primary-text:   #FFFFFF;
   --color-btn-primary-hover:  var(--color-brand-red-hover);
@@ -165,34 +151,20 @@
   --color-btn-secondary-border: rgba(255,255,255,0.3);
   --color-btn-outline-hover:  rgba(255,255,255,0.06);
 
-  /* Pill/Tag (Topics section) */
   --tag-bg:           transparent;
   --tag-text:         var(--text-primary);
   --tag-border:       var(--border-tag);
   --tag-icon-bg:      var(--color-brand-red);
   --tag-icon-text:    #FFFFFF;
-
-  /* Decorative dots */
   --dot-filled:       var(--color-brand-red);
   --dot-outline:      rgba(255,255,255,0.4);
-
-  /* Overlay card (instructor card dark bg) */
   --instructor-card-bg:     rgba(20, 8, 10, 0.85);
   --instructor-card-border: rgba(255,255,255,0.1);
-
-  /* Avatar ring */
   --avatar-ring:      var(--bg-surface);
-
-  /* Star / sparkle */
   --sparkle-color:    #FFFFFF;
 }
 
-/* ============================================================
-   LIGHT MODE
-   ============================================================ */
-
 [data-theme="light"] {
-  /* Backgrounds */
   --bg-page:          #FAF6F4;
   --bg-surface:       #FFFFFF;
   --bg-card:          #FFFFFF;
@@ -210,7 +182,6 @@
                         rgba(0,0,0,0.05) 62px
                       );
 
-  /* Text */
   --text-primary:     #140609;
   --text-secondary:   rgba(20,6,9,0.65);
   --text-muted:       rgba(20,6,9,0.40);
@@ -218,14 +189,12 @@
   --text-on-red:      #FFFFFF;
   --text-inverse:     #FFFFFF;
 
-  /* Borders */
   --border-default:   rgba(0,0,0,0.10);
   --border-subtle:    rgba(0,0,0,0.06);
   --border-strong:    rgba(0,0,0,0.20);
   --border-accent:    var(--color-brand-red);
   --border-tag:       rgba(0,0,0,0.20);
 
-  /* Interactive */
   --color-btn-primary-bg:     var(--color-brand-red);
   --color-btn-primary-text:   #FFFFFF;
   --color-btn-primary-hover:  var(--color-brand-red-hover);
@@ -234,38 +203,26 @@
   --color-btn-secondary-border: rgba(0,0,0,0.25);
   --color-btn-outline-hover:  rgba(0,0,0,0.04);
 
-  /* Pill/Tag */
   --tag-bg:           transparent;
   --tag-text:         var(--text-primary);
   --tag-border:       var(--border-tag);
   --tag-icon-bg:      var(--color-brand-red);
   --tag-icon-text:    #FFFFFF;
 
-  /* Decorative dots */
   --dot-filled:       var(--color-brand-red);
   --dot-outline:      rgba(0,0,0,0.25);
 
-  /* Overlay card */
   --instructor-card-bg:     rgba(255,255,255,0.90);
   --instructor-card-border: rgba(0,0,0,0.10);
 
-  /* Avatar ring */
   --avatar-ring:      var(--bg-surface);
-
-  /* Star / sparkle */
   --sparkle-color:    var(--color-dark-900);
 
-  /* Shadows (lighter for light mode) */
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
   --shadow-md:  0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.07);
   --shadow-lg:  0 10px 30px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.08);
   --shadow-xl:  0 20px 50px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.10);
 }
-
-/* ============================================================
-   SYSTEM PREFERENCE AUTO-DETECTION
-   (applies dark or light based on OS if no [data-theme] set)
-   ============================================================ */
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
@@ -285,7 +242,6 @@
                           rgba(0,0,0,0.05) 62px
                         );
 
-    /* Text */
     --text-primary:     #140609;
     --text-secondary:   rgba(20,6,9,0.65);
     --text-muted:       rgba(20,6,9,0.40);
@@ -293,14 +249,12 @@
     --text-on-red:      #FFFFFF;
     --text-inverse:     #FFFFFF;
 
-    /* Borders */
     --border-default:   rgba(0,0,0,0.10);
     --border-subtle:    rgba(0,0,0,0.06);
     --border-strong:    rgba(0,0,0,0.20);
     --border-accent:    var(--color-brand-red);
     --border-tag:       rgba(0,0,0,0.20);
 
-    /* Interactive */
     --color-btn-primary-bg:      var(--color-brand-red);
     --color-btn-primary-text:    #FFFFFF;
     --color-btn-primary-hover:   var(--color-brand-red-hover);
@@ -309,24 +263,19 @@
     --color-btn-secondary-border:rgba(0,0,0,0.25);
     --color-btn-outline-hover:   rgba(0,0,0,0.04);
 
-    /* Tags */
     --tag-bg:       transparent;
     --tag-text:     var(--text-primary);
     --tag-border:   var(--border-tag);
     --tag-icon-bg:  var(--color-brand-red);
     --tag-icon-text:#FFFFFF;
-
-    /* Decorative */
     --dot-filled:   var(--color-brand-red);
     --dot-outline:  rgba(0,0,0,0.25);
 
-    /* Overlay card */
     --instructor-card-bg:     rgba(255,255,255,0.90);
     --instructor-card-border: rgba(0,0,0,0.10);
     --avatar-ring:            var(--bg-surface);
     --sparkle-color:          var(--color-dark-900);
 
-    /* Shadows */
     --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md:  0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.07);
     --shadow-lg:  0 10px 30px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.08);
@@ -334,9 +283,6 @@
   }
 }
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -363,8 +309,6 @@ body {
   transition: background-color var(--duration-slow) var(--ease-out),
               color var(--duration-slow) var(--ease-out);
 }
-
-/* ── Typography Base ──────────────────────────────────────── */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
@@ -409,12 +353,10 @@ button, input, select, textarea {
 
 ul, ol { list-style: none; }
 
-/* ── Accent Text (e.g., "SKILLS" in red) ─────────────────── */
 .text-accent  { color: var(--text-accent); }
 .text-muted   { color: var(--text-muted); }
 .text-on-red  { color: var(--text-on-red); }
 
-/* ── Layout Container ─────────────────────────────────────── */
 
 .container {
   width: 100%;
@@ -423,14 +365,10 @@ ul, ol { list-style: none; }
   padding-inline: var(--container-pad);
 }
 
-/* ── Stripe Background Texture ────────────────────────────── */
-
 .bg-stripe {
   background-color: var(--bg-page);
   background-image: var(--bg-stripe);
 }
-
-/* ── Navigation ───────────────────────────────────────────── */
 
 .nav {
   height: var(--nav-height);
@@ -454,8 +392,6 @@ ul, ol { list-style: none; }
 
 .nav-link:hover { color: var(--text-primary); }
 
-/* ── Buttons ──────────────────────────────────────────────── */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -478,7 +414,6 @@ ul, ol { list-style: none; }
 
 .btn:active { transform: scale(0.97); }
 
-/* Primary — Red filled */
 .btn-primary {
   background-color: var(--color-btn-primary-bg);
   color: var(--color-btn-primary-text);
@@ -490,7 +425,6 @@ ul, ol { list-style: none; }
   box-shadow: 0 12px 32px rgba(232,57,29,0.5);
 }
 
-/* Secondary — outlined */
 .btn-secondary {
   background-color: var(--color-btn-secondary-bg);
   color: var(--color-btn-secondary-text);
@@ -499,7 +433,6 @@ ul, ol { list-style: none; }
 
 .btn-secondary:hover { background-color: var(--color-btn-outline-hover); }
 
-/* Icon button (circle) */
 .btn-icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -508,8 +441,6 @@ ul, ol { list-style: none; }
   justify-content: center;
   flex-shrink: 0;
 }
-
-/* ── Cards ────────────────────────────────────────────────── */
 
 .card {
   background-color: var(--bg-card);
@@ -528,7 +459,6 @@ ul, ol { list-style: none; }
   background-color: var(--bg-card-alt);
 }
 
-/* Course count badge (e.g., "200+ COURSES") */
 .badge-course {
   font-family: var(--font-display);
   font-weight: var(--fw-extrabold);
@@ -547,8 +477,6 @@ ul, ol { list-style: none; }
   color: var(--text-muted);
 }
 
-/* ── Avatar Stack ─────────────────────────────────────────── */
-
 .avatar-stack {
   display: flex;
   align-items: center;
@@ -566,8 +494,6 @@ ul, ol { list-style: none; }
 }
 
 .avatar:first-child { margin-left: 0; }
-
-/* ── Topic Tags (pill chips) ──────────────────────────────── */
 
 .tag {
   display: inline-flex;
@@ -596,7 +522,6 @@ ul, ol { list-style: none; }
   color: var(--color-brand-red);
 }
 
-/* Icon inside tag (grid icon, etc.) */
 .tag-icon {
   display: flex;
   align-items: center;
@@ -609,7 +534,6 @@ ul, ol { list-style: none; }
   flex-shrink: 0;
 }
 
-/* ── Decorative Dot Pair ──────────────────────────────────── */
 
 .dot-group {
   display: grid;
@@ -630,7 +554,6 @@ ul, ol { list-style: none; }
   border: 2px solid var(--dot-outline);
 }
 
-/* ── Sparkle / Star Icon ──────────────────────────────────── */
 
 .sparkle {
   display: inline-block;
@@ -639,7 +562,6 @@ ul, ol { list-style: none; }
   line-height: 1;
 }
 
-/* ── Instructor / Testimonial Overlay Card ────────────────── */
 
 .instructor-card {
   background-color: var(--instructor-card-bg);
@@ -671,7 +593,6 @@ ul, ol { list-style: none; }
   margin-top: var(--space-1);
 }
 
-/* ── Section Labels ───────────────────────────────────────── */
 
 .label-overline {
   font-family: var(--font-body);
@@ -682,7 +603,6 @@ ul, ol { list-style: none; }
   color: var(--text-muted);
 }
 
-/* ── Dividers ─────────────────────────────────────────────── */
 
 .divider {
   width: 100%;
@@ -690,13 +610,11 @@ ul, ol { list-style: none; }
   background-color: var(--border-default);
 }
 
-/* ── Accent Block (full-bleed red panel, right of nav) ────── */
 
 .accent-block {
   background-color: var(--bg-accent-block);
 }
 
-/* ── Input ────────────────────────────────────────────────── */
 
 .input {
   width: 100%;
@@ -721,8 +639,6 @@ ul, ol { list-style: none; }
   color: var(--text-muted);
 }
 
-/* ── Utilities ────────────────────────────────────────────── */
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -741,15 +657,12 @@ ul, ol { list-style: none; }
   white-space: nowrap;
 }
 
-/* ── Theme Transition (smooth mode-switch) ────────────────── */
-
 *, *::before, *::after {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: var(--duration-slow);
   transition-timing-function: var(--ease-out);
 }
 
-/* Reset transition for interactive elements to keep them snappy */
 button, a, input, [role="button"] {
   transition-duration: var(--duration-base);
 }
