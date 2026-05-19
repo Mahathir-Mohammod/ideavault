@@ -59,6 +59,8 @@ export default function RegisterPage() {
       setIsLoading(false);
       return;
     }
+    // Sign out to clear the auto-created session so navbar shows Login/Register on /login
+    await authClient.signOut();
     showToast("Account created! Redirecting to login...", "success");
     setTimeout(() => router.push("/login"), 1200);
     setIsLoading(false);
