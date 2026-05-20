@@ -65,7 +65,9 @@ export default function GlobalNotFound() {
                 fontSize: "var(--text-sm)",
                 padding: "var(--space-3) var(--space-6)",
               }}
-            > Take Me Home</a>
+            >
+              Take Me Home
+            </a>
           </div>
 
           <p style={{

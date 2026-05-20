@@ -166,55 +166,6 @@ export default function HeroPage() {
   return (
     <>
       {/*Embedded styles*/}
-      <style>{`
-        /* --- Blob pulse --- */
-        @keyframes blobPulse {
-          0%   { transform: scale(1) translate(0,0); opacity: 0.5; }
-          50%  { transform: scale(1.12) translate(12px,-12px); opacity: 0.9; }
-          100% { transform: scale(0.95) translate(-8px,8px); opacity: 0.6; }
-        }
-        @keyframes blobPulse2 {
-          0%   { transform: scale(1) translate(0,0); opacity: 0.4; }
-          50%  { transform: scale(1.08) translate(-10px,10px); opacity: 0.7; }
-          100% { transform: scale(0.92) translate(8px,-8px); opacity: 0.5; }
-        }
-        /* --- Sparkle --- */
-        @keyframes sparkle {
-          0%   { opacity: 0.08; transform: scale(0.8) rotate(0deg); }
-          100% { opacity: 0.2; transform: scale(1.3) rotate(45deg); }
-        }
-        /* --- Overline dot pulse --- */
-        @keyframes dotPulse {
-          0%, 100% { opacity: 1; }
-          50%      { opacity: 0.25; }
-        }
-        /* --- Scroll bounce --- */
-        @keyframes scrollBounce {
-          0%, 100% { transform: translateY(0); opacity: 1; }
-          50%      { transform: translateY(6px); opacity: 0.3; }
-        }
-        /* --- Slide content stagger animations --- */
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeUpOverline {
-          from { opacity: 0; transform: translateY(16px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .hero-blob,
-          .hero-blob2,
-          .hero-sparkle,
-          .hero-dot-pulse,
-          .hero-scroll-wheel { animation: none !important; }
-          .hero-slide-content > * { animation: none !important; opacity: 1 !important; transform: none !important; }
-        }
-        /* Bypass universal custom transition for alignment mechanics */
-        .no-global-transition, .no-global-transition * {
-          transition: none !important;
-        }
-      `}</style>
 
       {/* Hero Container */}
       <section
