@@ -232,7 +232,6 @@ export default function IdeasPage() {
 
   return (
     <>
-
       <Toaster
         position="top-center"
         toastOptions={{
@@ -264,7 +263,7 @@ export default function IdeasPage() {
             </p>
           </div>
 
-          {/* ─── Search & Filter Bar ─── */}
+          {/* Search & Filter Bar */}
           <div className="ip-search-section">
             <div className="ip-search-wrap">
               <span className="ip-search-icon">
@@ -282,7 +281,6 @@ export default function IdeasPage() {
             </div>
 
             <div className="ip-categories-wrap">
-              {/* Left scroll arrow */}
               {canScrollLeft && (
                 <button
                   className="ip-scroll-arrow ip-scroll-left"
@@ -307,7 +305,6 @@ export default function IdeasPage() {
                   </button>
                 ))}
               </div>
-              {/* Right scroll arrow */}
               {canScrollRight && (
                 <button
                   className="ip-scroll-arrow ip-scroll-right"
@@ -384,19 +381,13 @@ export default function IdeasPage() {
                       key={idea._id}
                       style={{ animationDelay: `${idx * 0.06}s` }}
                     >
-                      {/* Top row: category + time */}
+                      {/* category + time */}
                       <div className="ip-card-top">
                         <span className="ip-category">{idea.category || "Uncategorized"}</span>
                         <span className="ip-time">{timeAgo(idea.createdAt)}</span>
                       </div>
-
-                      {/* Title */}
                       <h3 className="ip-card-title">{idea.title}</h3>
-
-                      {/* Short description */}
                       <p className="ip-card-desc">{idea.shortDesc}</p>
-
-                      {/* Tags */}
                       {idea.tags && idea.tags.length > 0 && (
                         <div className="ip-card-tags">
                           {idea.tags.map((tag) => (
@@ -404,8 +395,6 @@ export default function IdeasPage() {
                           ))}
                         </div>
                       )}
-
-                      {/* Divider */}
                       <div className="ip-card-divider" />
 
                       {/* View Details CTA */}
@@ -425,7 +414,7 @@ export default function IdeasPage() {
             </>
           )}
 
-          {/* ─── Empty State (no ideas at all) ─── */}
+          {/* Empty State */}
           {!loading && !error && ideas.length === 0 && (
             <div className="ip-empty">
               <EmptyIcon />

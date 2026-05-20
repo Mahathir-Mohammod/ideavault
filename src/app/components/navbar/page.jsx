@@ -38,7 +38,7 @@ export default function Navbar() {
 
       <nav className="nav-bar">
         <div className="flex items-center w-full" style={{ maxWidth: "1600px", margin: "0 auto" }}>
-        {/* ── Logo ── */}
+        {/* Logo */}
         <Link href="/" className="nav-logo">
           <div className="nav-logo-icon">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -50,7 +50,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* ── Desktop center links ── */}
+        {/* Desktop center links */}
         <div className="nav-center">
           <NavLink href="/" icon={<IconHome />}>Home</NavLink>
           <NavLink href="/ideas" icon={<IconIdea />}>Ideas</NavLink>
@@ -63,7 +63,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* ── Right side ── */}
+        {/* Right side */}
         <div className="nav-end">
 
           {/* Theme toggle */}
@@ -137,9 +137,9 @@ export default function Navbar() {
 
                     <div className="drop-section" style={{display:"flex",flexDirection:"column",gap:"2px"}}>
                       <Link href="/profile" className="drop-item" onClick={() => setDropdownOpen(false)}>
-                        <IconUser size={15} /><span>Profile Management</span>
+                        <IconUser size={15} /><span>My Profile</span>
                       </Link>
-                      <Link href="/settings" className="drop-item" onClick={() => setDropdownOpen(false)}>
+                      <Link href="/profile/edit" className="drop-item" onClick={() => setDropdownOpen(false)}>
                         <IconSettings size={15} /><span>Settings</span>
                       </Link>
                     </div>

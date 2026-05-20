@@ -7,6 +7,7 @@ ft- for footer
 faq- for frequently asked questions
 ai- for add idea
 mi - for my ideas
+pr - for profile
 */
 
 :root {
@@ -4316,6 +4317,216 @@ select option {
   .mi-modal-delete {
     max-width: 100%;
   }
+}
+
+
+/* ─────── PROFILE (pr-) ─────── */
+.pr-page {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--container-pad);
+  background: var(--bg-page);
+  font-family: var(--font-body);
+}
+
+.pr-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  box-shadow: var(--shadow-lg);
+  animation: cardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.pr-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 3px solid var(--border-accent);
+  box-shadow: 0 0 0 4px var(--bg-card), 0 0 0 7px color-mix(in srgb, var(--color-brand-red) 25%, transparent);
+}
+
+.pr-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pr-avatar-initials {
+  width: 100%;
+  height: 100%;
+  background: var(--color-brand-red);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: var(--tracking-tight);
+}
+
+.pr-name {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.pr-email {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.pr-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: var(--space-2) 0;
+}
+
+.pr-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.pr-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-brand-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s var(--ease-spring);
+}
+
+.pr-edit-btn:hover {
+  background: var(--color-brand-red-hover);
+  transform: translateY(-1px);
+}
+
+.pr-edit-btn:active {
+  transform: scale(0.98);
+}
+
+.pr-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-6);
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s var(--ease-spring);
+}
+
+.pr-home-btn:hover {
+  background: var(--color-btn-outline-hover);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.pr-home-btn:active {
+  transform: scale(0.98);
+}
+/* ─── Profile skeletons ─── */
+
+.pr-skel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 420px;
+}
+
+.pr-skel-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(90deg,
+      rgba(128, 128, 128, 0.08) 25%,
+      rgba(128, 128, 128, 0.16) 50%,
+      rgba(128, 128, 128, 0.08) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.pr-skel-line {
+  height: 1.25rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg,
+      rgba(128, 128, 128, 0.08) 25%,
+      rgba(128, 128, 128, 0.16) 50%,
+      rgba(128, 128, 128, 0.08) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.pr-skel-line-sm {
+  width: 60%;
+  height: 0.875rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg,
+      rgba(128, 128, 128, 0.08) 25%,
+      rgba(128, 128, 128, 0.16) 50%,
+      rgba(128, 128, 128, 0.08) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.pr-skel-btn {
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg,
+      rgba(128, 128, 128, 0.08) 25%,
+      rgba(128, 128, 128, 0.16) 50%,
+      rgba(128, 128, 128, 0.08) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  margin-top: var(--space-2);
 }
 
 
