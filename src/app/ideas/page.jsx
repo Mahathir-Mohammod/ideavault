@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { Toaster, toast } from "react-hot-toast";
-import { API_BASE } from "@/lib/api";
 
 const CATEGORIES = [
   "All",
@@ -139,7 +138,7 @@ export default function IdeasPage() {
       const params = new URLSearchParams();
       if (search.trim()) params.set("search", search.trim());
       if (category && category !== "All") params.set("category", category);
-      const url = `${API_BASE}/api/ideas?${params.toString()}`;
+      const url = `http://localhost:5000/api/ideas?${params.toString()}`;
       const res = await fetch(url, { credentials: "include" });
       if (!res.ok) {
         const data = await res.json();
@@ -165,7 +164,7 @@ export default function IdeasPage() {
         const params = new URLSearchParams();
         if (searchQuery.trim()) params.set("search", searchQuery.trim());
         if (selectedCategory && selectedCategory !== "All") params.set("category", selectedCategory);
-        const url = `${API_BASE}/api/ideas?${params.toString()}`;
+        const url = `http://localhost:5000/api/ideas?${params.toString()}`;
         const res = await fetch(url, { credentials: "include" });
         if (cancelled) return;
         if (!res.ok) {

@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
-import { API_BASE } from "@/lib/api";
 
 const CATEGORIES = [
   "FinTech", "HealthTech", "EdTech", "CleanTech", "AI / ML",
@@ -249,7 +248,7 @@ export default function AddIdeaPage() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/ideas`, {
+      const res = await fetch("http://localhost:5000/api/ideas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

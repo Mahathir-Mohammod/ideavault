@@ -11,7 +11,7 @@ const protectedPagePrefixes = [
   "/ideas",
 ];
 
-export function middleware(request) {
+export function proxy(request) {
   const sessionCookie = getSessionCookie(request);
   const { pathname } = request.nextUrl;
 
