@@ -138,7 +138,7 @@ export default function IdeasPage() {
       const params = new URLSearchParams();
       if (search.trim()) params.set("search", search.trim());
       if (category && category !== "All") params.set("category", category);
-      const url = `http://localhost:5000/api/ideas?${params.toString()}`;
+      const url = `${process.env.NEXT_PUBLIC_API_URL}/api/ideas?${params.toString()}`;
       const res = await fetch(url, { credentials: "include" });
       if (!res.ok) {
         const data = await res.json();
@@ -164,7 +164,7 @@ export default function IdeasPage() {
         const params = new URLSearchParams();
         if (searchQuery.trim()) params.set("search", searchQuery.trim());
         if (selectedCategory && selectedCategory !== "All") params.set("category", selectedCategory);
-        const url = `http://localhost:5000/api/ideas?${params.toString()}`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/api/ideas?${params.toString()}`;
         const res = await fetch(url, { credentials: "include" });
         if (cancelled) return;
         if (!res.ok) {
