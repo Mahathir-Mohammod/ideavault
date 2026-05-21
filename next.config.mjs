@@ -8,7 +8,7 @@ const nextConfig = {
     return [
       {
         source: "/api/auth/:path*",
-        destination: `${process.env.NEXT_PUBLIC_BETTER_AUTH_URL}/api/auth/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_BETTER_AUTH_URL || "https://ideavault-ten.vercel.app"}/api/auth/:path*`,
       },
     ];
   },
