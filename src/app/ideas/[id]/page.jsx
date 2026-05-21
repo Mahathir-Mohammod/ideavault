@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE } from "@/lib/api";
 
 
 function timeAgo(date) {
@@ -212,7 +213,7 @@ export default function IdeaDetailsPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${id}`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${id}`, {
         credentials: "include",
       });
       if (!res.ok) {
@@ -234,7 +235,7 @@ export default function IdeaDetailsPage() {
     let cancelled = false;
     const load = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/ideas/${id}`, {
+        const res = await fetch(`${API_BASE}/api/ideas/${id}`, {
           credentials: "include",
         });
         if (cancelled) return;
@@ -269,7 +270,7 @@ export default function IdeaDetailsPage() {
     if (!text) return;
     setSubmitting(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${id}/comments`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${id}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -305,7 +306,7 @@ export default function IdeaDetailsPage() {
     if (!text) return;
     setSavingEdit(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${id}/comments/${commentId}`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${id}/comments/${commentId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -333,7 +334,7 @@ export default function IdeaDetailsPage() {
     if (!deletingComment) return;
     setDeleting(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${id}/comments/${deletingComment._id}`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${id}/comments/${deletingComment._id}`, {
         method: "DELETE",
         credentials: "include",
       });

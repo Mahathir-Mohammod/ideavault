@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE } from "@/lib/api";
 
 function timeAgo(date) {
   const now = Date.now();
@@ -100,7 +101,7 @@ export default function MyInteractionsPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:5000/api/ideas/interacted", {
+      const res = await fetch(`${API_BASE}/api/ideas/interacted`, {
         credentials: "include",
       });
       if (!res.ok) {
@@ -125,7 +126,7 @@ export default function MyInteractionsPage() {
     let cancelled = false;
     const load = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/ideas/interacted", {
+        const res = await fetch(`${API_BASE}/api/ideas/interacted`, {
           credentials: "include",
         });
         if (cancelled) return;

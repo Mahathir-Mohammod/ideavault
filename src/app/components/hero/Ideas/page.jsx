@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { API_BASE } from "@/lib/api";
 
 
 function timeAgo(date) {
@@ -88,7 +89,7 @@ export default function TrendingIdeas() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch("http://localhost:5000/api/ideas/trending");
+        const res = await fetch(`${API_BASE}/api/ideas/trending`);
         if (!res.ok) {
           const data = await res.json();
           throw new Error(data.error || "Failed to fetch trending ideas");

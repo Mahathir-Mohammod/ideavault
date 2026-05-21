@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { Toaster, toast } from "react-hot-toast";
+import { API_BASE } from "@/lib/api";
 
 const CATEGORIES = [
   "FinTech", "HealthTech", "EdTech", "CleanTech", "AI / ML",
@@ -253,7 +254,7 @@ function UpdateModal({ idea, onClose, onSaved }) {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${idea._id}`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${idea._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -451,7 +452,7 @@ function DeleteModal({ idea, onClose, onDeleted }) {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/ideas/${idea._id}`, {
+      const res = await fetch(`${API_BASE}/api/ideas/${idea._id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -538,7 +539,7 @@ export default function MyIdeasPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:5000/api/ideas/my", {
+      const res = await fetch(`${API_BASE}/api/ideas/my`, {
         credentials: "include",
       });
       if (!res.ok) {
@@ -563,7 +564,7 @@ export default function MyIdeasPage() {
     let cancelled = false;
     const load = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/ideas/my", {
+        const res = await fetch(`${API_BASE}/api/ideas/my`, {
           credentials: "include",
         });
         if (cancelled) return;
