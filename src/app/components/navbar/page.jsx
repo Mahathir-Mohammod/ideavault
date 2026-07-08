@@ -61,6 +61,9 @@ export default function Navbar() {
               <NavLink href="/my-interactions" icon={<IconChat />}>My Interactions</NavLink>
             </>
           )}
+          {isLoggedIn && user?.role === "admin" && (
+            <NavLink href="/admin/dashboard" icon={<IconShield />}>Admin</NavLink>
+          )}
         </div>
 
         {/* Right side */}
@@ -132,6 +135,11 @@ export default function Navbar() {
                       <Link href="/my-interactions" className="drop-item" onClick={() => setDropdownOpen(false)}>
                         <IconChat size={15} /><span>My Interactions</span>
                       </Link>
+                      {user?.role === "admin" && (
+                        <Link href="/admin/dashboard" className="drop-item" onClick={() => setDropdownOpen(false)}>
+                          <IconShield size={15} /><span>Admin Panel</span>
+                        </Link>
+                      )}
                       <div className="drop-divider" style={{margin:"4px 0"}} />
                     </div>
 
@@ -186,6 +194,15 @@ export default function Navbar() {
               <MobileLink href="/add-idea" icon={<IconPlus />} active={isActive("/add-idea")} onClick={() => setMobileOpen(false)}>Add Idea</MobileLink>
               <MobileLink href="/my-ideas" icon={<IconBox />} active={isActive("/my-ideas")} onClick={() => setMobileOpen(false)}>My Ideas</MobileLink>
               <MobileLink href="/my-interactions" icon={<IconChat />} active={isActive("/my-interactions")} onClick={() => setMobileOpen(false)}>My Interactions</MobileLink>
+              {user?.role === "admin" && (
+                <>
+                  <div className="mobile-divider" />
+                  <div className="mobile-label">Admin</div>
+                  <MobileLink href="/admin/dashboard" icon={<IconShield />} active={isActive("/admin/dashboard")} onClick={() => setMobileOpen(false)}>Admin Panel</MobileLink>
+                  <MobileLink href="/admin/users" icon={<IconUsers />} active={isActive("/admin/users")} onClick={() => setMobileOpen(false)}>Manage Users</MobileLink>
+                  <MobileLink href="/admin/ideas" icon={<IconIdea />} active={isActive("/admin/ideas")} onClick={() => setMobileOpen(false)}>Manage Ideas</MobileLink>
+                </>
+              )}
             </>
           ) : (
             <>
@@ -224,6 +241,19 @@ function MobileLink({ href, icon, children, active, onClick }) {
 }
 
 /* ─── Icons ─── */
+const IconShield = ({size=15}) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>
+);
+const IconUsers = ({size=15}) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+    <path d="M16 3.13a4 4 0 010 7.75" />
+  </svg>
+);
 const IconHome = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/>
